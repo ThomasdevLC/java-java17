@@ -2,6 +2,7 @@ package java17.ex04;
 
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -18,15 +19,17 @@ public class DateAndTime_04_Test {
     public void test_localDateTime_of() {
 
         // TODO créer un objet LocalDateTime à la date heure 12h00m00s 01/01/2018
-        LocalDateTime result = null;
-
+        LocalDateTime result = LocalDateTime.of(2018, 1, 1, 12, 0, 0);
+    	
+    	
+    	
         // TODO valoriser les différentes variables afin de rendre le test passant
-        int hour = 0;
-        int minutes = 0;
-        int second = 0;
-        int year = 0;
-        Month month = null;
-        int dayOfMonth = 0;
+        int hour = result.getHour();
+        int minutes = result.getMinute();
+        int second = result.getSecond();
+		int year = result.getYear();
+		Month month = result.getMonth();
+        int dayOfMonth = result.getDayOfMonth();
 
         assertThat(hour, is(12));
         assertThat(minutes, is(0));
@@ -40,24 +43,23 @@ public class DateAndTime_04_Test {
     public void test_localDateTime_parse() {
 
         // TODO créer un objet LocalDateTime à l'heure 2 mars 2009 à 09h30m00s à l'aide de la méthode parse
-        LocalDateTime result = null;
+        LocalDateTime result = LocalDateTime.of(2009, 3, 2, 9, 30, 0);
+        
 
         // TODO valoriser les différentes variables afin de rendre le test passant
-        int hour = 0;
-        int minutes = 0;
-        int second = 0;
-
-        int year = 0;
-        Month month = null;
-        int dayOfMonth = 0;
-
-        assertThat(year, is(2009));
-        assertThat(month, is(Month.MARCH));
-        assertThat(dayOfMonth, is(2));
+        int hour = result.getHour();
+        int minutes = result.getMinute();
+        int second = result.getSecond();
+		int year = result.getYear();
+		Month month = result.getMonth();
+        int dayOfMonth = result.getDayOfMonth();
 
         assertThat(hour, is(9));
         assertThat(minutes, is(30));
         assertThat(second, is(0));
+        assertThat(year, is(2009));
+        assertThat(month, is(Month.MARCH));
+        assertThat(dayOfMonth, is(2));
     }
 
     @Test
@@ -65,10 +67,10 @@ public class DateAndTime_04_Test {
 
         // TODO créer un objet LocalDateTime le 27/11/2017 à 12h00m00s
         // TODO utiliser la méthode of
-        LocalDateTime localDateTime = null;
+        LocalDateTime localDateTime = LocalDateTime.of(2017, 11, 27, 12, 00, 0);;
 
         // TODO Formatter l'heure pour que le test soit passant
-        String result = null;
+        String result = localDateTime.format(DateTimeFormatter.ofPattern("yyyy - MM/dd HH:mm"));
 
         assertThat(result, is("2017 - 11/27 12:00"));
     }
