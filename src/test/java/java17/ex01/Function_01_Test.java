@@ -62,8 +62,10 @@ public class Function_01_Test {
 
 		// TODO invoquer la fonction personToAccount
 		Account result = personToAccount.apply(person);
+		System.out.println(person.toString());
 
 		assert result.getOwner().equals(person);
 		assert result.getBalance().equals(1000);
+		
 	}
 }
