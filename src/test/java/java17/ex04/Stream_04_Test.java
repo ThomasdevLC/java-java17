@@ -31,6 +31,8 @@ public class Stream_04_Test {
 
         // TODO compléter pour rendre le test passant
         // TODO utiliser la méthode "add"
+        // TODO 
+
     	  Stream<Object> result = Stream.builder()
     	            .add("Alexandra")
     	            .add("Cyril")
@@ -59,7 +61,6 @@ public class Stream_04_Test {
     @Test
     public void test_iterate() throws Exception {
         // TODO utiliser la méthode "iterate" de Stream afin de rendre le test passant
-
         Stream<Integer> result1 = Stream.iterate(1, i -> 1).limit(5);
         Stream<Integer> result2 = Stream.iterate(1, i -> i + 1).limit(5);
 
